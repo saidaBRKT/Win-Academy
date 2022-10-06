@@ -1,7 +1,6 @@
 package com.example;
-// import java.util.Date;
 
-public class enseignant extends user{
+public class Enseignant extends User{
     
     private String date_prise_fct;
     private int index;
@@ -29,8 +28,8 @@ public class enseignant extends user{
         this.id_mat = id_mat;
     }
 
-    public enseignant(){}
-    public enseignant(int id,String nom,String prenom,String tel,String mail,String date_prise_fct, int index,int id_college,int id_mat) {
+    public Enseignant(){}
+    public Enseignant(int id,String nom,String prenom,String tel,String mail,String date_prise_fct, int index,int id_college,int id_mat) {
         super(id,nom,prenom,tel,mail,id_college);
         this.date_prise_fct = date_prise_fct;
         this.index = index;

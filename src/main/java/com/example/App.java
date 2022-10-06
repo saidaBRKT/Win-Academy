@@ -92,14 +92,14 @@ public final class App {
         System.out.print("Entrer votre choix : ");
     }
     public static void main(String[] args) {
-    gestion gst = new gestion();
+    Gestion gst = new Gestion();
 
     // ========================== Etudiant ==========================
-    etudiant e1= new etudiant(1, "BARAKAT", "SAIDA", "06-12-43-54-78", "saida@gmail.com", 1, 1, "2022-10-10");
-    etudiant e2= new etudiant(2, "LAQRAA", "HAMZA", "06-12-43-00-01", "hamza@gmail.com", 1, 2, "2022-10-10");
-    etudiant e3= new etudiant(3, "BASSOU", "ABDELHAMID", "06-22-43-54-33", "abdelhamid@gmail.com", 1, 1, "2022-10-10");
-    etudiant e4= new etudiant(4, "SALIM", "AHMED", "06-01-45-12-78", "ahmed@gmail.com", 1, 1, "2022-10-10");
-    etudiant e5= new etudiant(5, "HASNAOUI", "SAID", "06-12-43-33-31", "said@gmail.com", 1, 1, "2022-10-10");
+    Etudiant e1= new Etudiant(1, "BARAKAT", "SAIDA", "06-12-43-54-78", "saida@gmail.com", 1, 1, "2022-10-10");
+    Etudiant e2= new Etudiant(2, "LAQRAA", "HAMZA", "06-12-43-00-01", "hamza@gmail.com", 1, 2, "2022-10-10");
+    Etudiant e3= new Etudiant(3, "BASSOU", "ABDELHAMID", "06-22-43-54-33", "abdelhamid@gmail.com", 1, 1, "2022-10-10");
+    Etudiant e4= new Etudiant(4, "SALIM", "AHMED", "06-01-45-12-78", "ahmed@gmail.com", 1, 1, "2022-10-10");
+    Etudiant e5= new Etudiant(5, "HASNAOUI", "SAID", "06-12-43-33-31", "said@gmail.com", 1, 1, "2022-10-10");
     gst.add_etd(e1);
     gst.add_etd(e2);
     gst.add_etd(e3);
@@ -117,9 +117,9 @@ public final class App {
     gst.add_ClassEns(ce1);
     gst.add_ClassEns(ce2);
     // ====================== Enseignant ===========
-    enseignant ens1 = new enseignant(1, "ELYAAGOUBI", "RAOUIA", "06-22-43-33-15", "raouia@gmail.com", "2022-10-10", 111, 1, 1);
-    enseignant ens2 = new enseignant(2, "MAANI", "SAFIA", "06-02-43-33-00", "safia@gmail.com", "2022-10-10", 67, 1, 2);
-    enseignant ens3 = new enseignant(3, "KAZOUM", "OMAR", "06-19-43-02-31", "omar@gmail.com", "2022-10-10", 87908, 1, 1);
+    Enseignant ens1 = new Enseignant(1, "ELYAAGOUBI", "RAOUIA", "06-22-43-33-15", "raouia@gmail.com", "2022-10-10", 111, 1, 1);
+    Enseignant ens2 = new Enseignant(2, "MAANI", "SAFIA", "06-02-43-33-00", "safia@gmail.com", "2022-10-10", 67, 1, 2);
+    Enseignant ens3 = new Enseignant(3, "KAZOUM", "OMAR", "06-19-43-02-31", "omar@gmail.com", "2022-10-10", 87908, 1, 1);
     gst.add_ens(ens1);
     gst.add_ens(ens2);
     gst.add_ens(ens3);
@@ -159,19 +159,19 @@ public final class App {
     gst.add_mat(m3);
     gst.add_mat(m4);
     // =======================  Départements ==================
-    departement d1=new departement(1, "dep1");
-    departement d2=new departement(2, "dep2");
-    departement d3=new departement(3, "dep3");
-    departement d4=new departement(4, "dep4");
+    Departement d1=new Departement(1, "dep1");
+    Departement d2=new Departement(2, "dep2");
+    Departement d3=new Departement(3, "dep3");
+    Departement d4=new Departement(4, "dep4");
     gst.add_dep(d1);
     gst.add_dep(d2);
     gst.add_dep(d3);
     gst.add_dep(d4);
     // =======================  Collèges ==================
-    college c1=new college(1, "college1", "aaaaaaaaaaaaaaaaaaaaaaa");
-    college c2=new college(2, "college2", "bbbbbbbbbbbbbbbbbbbbbbb");
-    college c3=new college(3, "college3", "ccccccccccccccccccccccc");
-    college c4=new college(4, "college4", "ddddddddddddddddddddddd");
+    College c1=new College(1, "college1", "aaaaaaaaaaaaaaaaaaaaaaa");
+    College c2=new College(2, "college2", "bbbbbbbbbbbbbbbbbbbbbbb");
+    College c3=new College(3, "college3", "ccccccccccccccccccccccc");
+    College c4=new College(4, "college4", "ddddddddddddddddddddddd");
     gst.add_College(c1);
     gst.add_College(c2);
     gst.add_College(c3);
@@ -223,7 +223,7 @@ public final class App {
                         System.out.print("Entrer l'identifiant de la classe : ");
                         int id_class = input.nextInt();
 
-                        etudiant etd = new etudiant(id,nom,pren,tel,mail,id_college,id_class,annee);
+                        Etudiant etd = new Etudiant(id,nom,pren,tel,mail,id_college,id_class,annee);
                         gst.add_etd(etd);
                         System.out.println(etd.toString());
                     break;                      
@@ -307,7 +307,7 @@ public final class App {
                         System.out.print("Entrer l'identifiant du matière : ");
                         int id_mat = input.nextInt();
 
-                        ens1 = new enseignant(id,nom,pren,tel,mail,annee,index,id_college,id_mat);
+                        ens1 = new Enseignant(id,nom,pren,tel,mail,annee,index,id_college,id_mat);
                         gst.add_ens(ens1);
                         System.out.println(ens1.toString());
                     break;                
@@ -365,7 +365,7 @@ public final class App {
                         String nom_coll = input.next();
                         System.out.print("Entrer l'address du collège : ");
                         String address_coll = input.next();
-                        college c = new college(id_coll,nom_coll,address_coll);
+                        College c = new College(id_coll,nom_coll,address_coll);
                         gst.add_College(c);
                         System.out.println(c.toString());
                     break;
@@ -374,7 +374,7 @@ public final class App {
                         int id_dep = input.nextInt();
                         System.out.print("Entrer le nom du département : ");
                         String nom_dep = input.next();
-                        departement d = new departement(id_dep,nom_dep);
+                        Departement d = new Departement(id_dep,nom_dep);
                         gst.add_dep(d);
                         System.out.println(d.toString());
                     break;
@@ -486,7 +486,7 @@ public final class App {
                     gst.moyenne_matiere(id_mat, s);
                 break;
                 case 2:
-                    gestion g=new gestion();
+                    Gestion g=new Gestion();
                     Salle Ts1=new Salle(1,"sall1" , 20, 1);
                     Salle Ts2=new Salle(2,"sall2" , 20, 1);
                     Salle Ts3=new Salle(3,"sall3" , 20, 2);

@@ -1,6 +1,6 @@
 package com.example;
 
-public class college {
+public class College {
     private int id;
     private String nom;
     private String address;
@@ -23,7 +23,7 @@ public class college {
     public void setAddress(String address) {
         this.address = address;
     }
-    public college(int id, String nom, String address) {
+    public College(int id, String nom, String address) {
         this.id = id;
         this.nom = nom;
         this.address = address;

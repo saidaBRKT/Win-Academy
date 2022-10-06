@@ -1,6 +1,6 @@
 package com.example;
 
-public class user {
+public class User {
     protected int id;
     protected int id_college;
     protected String nom;
@@ -8,9 +8,9 @@ public class user {
     protected String tel;
     protected String mail;
    
-    public user(){}
+    public User(){}
 
-    public user(int id_user,String nm,String pren,String t,String m,int id_college){
+    public User(int id_user,String nm,String pren,String t,String m,int id_college){
         id=id_user;
         nom=nm;
         prenom=pren;

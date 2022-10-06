@@ -1,6 +1,6 @@
 package com.example;
 
-public class departement {
+public class Departement {
     private int id;
     private String nom;
     
@@ -16,7 +16,7 @@ public class departement {
     public void setNom(String nom) {
         this.nom = nom;
     }
-    public departement(int id, String nom) {
+    public Departement(int id, String nom) {
         this.id = id;
         this.nom = nom;
     }

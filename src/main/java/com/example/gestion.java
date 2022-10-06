@@ -4,20 +4,20 @@ import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-public class gestion {
+public class Gestion {
  
-    public static LinkedList<etudiant> studentsList;
-    LinkedList<enseignant> listRR;
+    LinkedList<Etudiant> studentsList;
+    LinkedList<Enseignant> listRR;
     LinkedList<Class_ens> list_ClassEns;
     LinkedList<Class> list_Class;
     LinkedList<Note> list_Note;
     LinkedList<Matiere> list_Matiere;
     LinkedList<Salle> list_Salle;
-    LinkedList<departement> list_Dep;
-    LinkedList<college> list_College;
+    LinkedList<Departement> list_Dep;
+    LinkedList<College> list_College;
 
  
-    public gestion()
+    public Gestion()
     {
         listRR = new LinkedList<>();
         studentsList = new LinkedList<>();
@@ -31,7 +31,7 @@ public class gestion {
     }
  
     // Method 1 : Ajouter étudiant
-    public void add_etd(etudiant etd)
+    public void add_etd(Etudiant etd)
     {
         if (!find_etd(etd.getId())) studentsList.add(etd); 
         else System.out.println("l'étudiant exist déja");   
@@ -40,7 +40,7 @@ public class gestion {
     // Method 2 : Chercher un étudiant
     public boolean find_etd(int idNumber)
     {
-        for (etudiant e : studentsList) {
+        for (Etudiant e : studentsList) {
             if (e.getId() == idNumber) {
                 System.out.println(e);
                 return true;
@@ -52,8 +52,8 @@ public class gestion {
     // Method 3 : Supprimer un étudiant
     public void delete(int etd_IdNumber)
     {
-        etudiant etd_Del = null;
-        for (etudiant ll : studentsList) {
+        Etudiant etd_Del = null;
+        for (Etudiant ll : studentsList) {
             if (ll.getId() == etd_IdNumber) {
                 etd_Del = ll;
             }
@@ -68,9 +68,9 @@ public class gestion {
     }
 
     // Method 4 : Trouver un étudiant
-    public etudiant find_etudiant(int id)
+    public Etudiant find_etudiant(int id)
     {
-        for (etudiant e : studentsList) {
+        for (Etudiant e : studentsList) {
             if (e.getId() == id) {
                 return e;
             }
@@ -82,7 +82,7 @@ public class gestion {
     public void update_etd(int id, Scanner input)
     {
         if (find_etd(id)) {
-            etudiant etd = find_etudiant(id);
+            Etudiant etd = find_etudiant(id);
 
             System.out.print("Entrer l'identifiant de l'étudiant : ");
             int id_etd = input.nextInt();
@@ -123,7 +123,7 @@ public class gestion {
         if (studentsList.isEmpty()) {
             System.out.println("la liste est vide\n");
         }
-        for (etudiant etd : studentsList) {
+        for (Etudiant etd : studentsList) {
             System.out.println(etd.toString());
         }
     }
@@ -134,7 +134,7 @@ public class gestion {
         if (studentsList.stream().filter(e->e.getId_college()==id_coll && e.getId_class()==id_class).count()==0) {
             System.out.println("la liste est vide\n");
         }
-        for (etudiant etd : studentsList) {
+        for (Etudiant etd : studentsList) {
             if(etd.id_college==id_coll && etd.getId_class()==id_class)
             System.out.println(etd.toString());
         }
@@ -153,7 +153,7 @@ public class gestion {
     // ================    Enseignant    ================
 
     // Method 1 : Ajouter un enseignant
-    public void add_ens(enseignant ens)
+    public void add_ens(Enseignant ens)
     {
         if (!find_ens(ens.getId())) listRR.add(ens);
         else System.out.println("l'enseignant exist déja");   
@@ -162,7 +162,7 @@ public class gestion {
     // Method 2 : chercher un enseignant
     public boolean find_ens(int idNimber)
     {
-        for (enseignant e : listRR) {
+        for (Enseignant e : listRR) {
  
             if (e.getId() == idNimber) {
  
@@ -176,8 +176,8 @@ public class gestion {
     // Method 3 : Supprimer un enseignant
     public void delete_ens(int ens_IdNumber)
     {
-        enseignant ens_Del = null;
-        for (enseignant ll : listRR) {
+        Enseignant ens_Del = null;
+        for (Enseignant ll : listRR) {
             if (ll.getId() == ens_IdNumber) {
                 ens_Del = ll;
             }
@@ -192,9 +192,9 @@ public class gestion {
     }
  
     // Method 4 : Trouver un enseignant
-    public enseignant find_enseignant(int id)
+    public Enseignant find_enseignant(int id)
     {
-        for (enseignant e : listRR) {
+        for (Enseignant e : listRR) {
             if (e.getId() == id) {
                 return e;
             }
@@ -206,7 +206,7 @@ public class gestion {
     public void update_ens(int id, Scanner input)
     {
         if (find_ens(id)) {
-            enseignant ens = find_enseignant(id);
+            Enseignant ens = find_enseignant(id);
             System.out.print("Entrer l'identifiant de l'enseignant : ");
             int newId = input.nextInt();
 
@@ -255,7 +255,7 @@ public class gestion {
         if (listRR.isEmpty()) {
             System.out.println("la liste est vide\n");
         }
-        for (enseignant ens : listRR) {
+        for (Enseignant ens : listRR) {
             System.out.println(ens.toString());
         }
     }
@@ -266,7 +266,7 @@ public class gestion {
         if (listRR.stream().filter(e->e.getId_college()==id_c).count()==0) {
             System.out.println("la liste est vide\n");
         }
-        for (enseignant ens : listRR) {
+        for (Enseignant ens : listRR) {
             if(ens.id_college==id_c)
             System.out.println(ens.toString());
         }
@@ -346,7 +346,7 @@ public class gestion {
     // ====================== Collèges ===========================
 
     // Method 1 : Ajouter college
-    public void add_College(college c)
+    public void add_College(College c)
     {
 
         if (!find_cls(c.getId())) {
@@ -360,7 +360,7 @@ public class gestion {
     // Method 2 : chercher une salle
     public boolean find_coll(int idNumber)
     {
-        for (college c : list_College) {
+        for (College c : list_College) {
  
             if (c.getId() == idNumber) {
  
@@ -373,7 +373,7 @@ public class gestion {
     // ====================== Departements ===========================
 
     // Method 1 : Ajouter departement
-    public void add_dep(departement d)
+    public void add_dep(Departement d)
     {
 
         if (!find_cls(d.getId())) {
@@ -387,7 +387,7 @@ public class gestion {
     // Method 2 : chercher une salle
     public boolean find_dep(int idNumber)
     {
-        for (departement d : list_Dep) {
+        for (Departement d : list_Dep) {
  
             if (d.getId() == idNumber) {
  
