@@ -4,7 +4,7 @@ public class college {
     private int id;
     private String nom;
     private String address;
-
+    
     public int getId() {
         return id;
     }
@@ -27,5 +27,9 @@ public class college {
         this.id = id;
         this.nom = nom;
         this.address = address;
+    }
+    @Override
+    public String toString() {
+        return "college [id=" + id + ", nom=" + nom + ", address=" + address + "]";
     }
 }

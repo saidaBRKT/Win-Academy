@@ -3,11 +3,7 @@ package com.example;
 public class departement {
     private int id;
     private String nom;
-
-    public departement(int id, String nom) {
-        this.id = id;
-        this.nom = nom;
-    }
+    
     public int getId() {
         return id;
     }
@@ -20,5 +16,13 @@ public class departement {
     public void setNom(String nom) {
         this.nom = nom;
     }
+    public departement(int id, String nom) {
+        this.id = id;
+        this.nom = nom;
+    }
     
+    @Override
+    public String toString() {
+        return "departement [id=" + id + ", nom=" + nom + "]";
+    }
 }

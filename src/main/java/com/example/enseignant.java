@@ -42,7 +42,7 @@ public class enseignant extends user{
     public String toString()
     {
  
-        return "Enseignants{"
+        return "Enseignant {"
             + "Nom : " + nom + ", Prénom : " + prenom
             + ", Téléphone : " + tel +", Email : " + mail + '}';
     }
