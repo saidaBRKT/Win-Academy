@@ -284,7 +284,7 @@ public class gestion {
             list_Salle.add(s);
         }
         else {
-            System.out.println("l'étudiant exist déja");
+            System.out.println("la salle exist déja");
         }
     }
  
@@ -318,7 +318,7 @@ public class gestion {
 
     // ====================== Classes ===========================
 
-    // Method 1 : Ajouter salle
+    // Method 1 : Ajouter class
     public void add_Class(Class c)
     {
 
@@ -326,11 +326,11 @@ public class gestion {
             list_Class.add(c);
         }
         else {
-            System.out.println("n'exist déja");
+            System.out.println("la class exist déja");
         }
     }
 
-    // Method 2 : chercher une salle
+    // Method 2 : chercher une Class
     public boolean find_cls(int idNumber)
     {
         for (Class c : list_Class) {
@@ -353,7 +353,7 @@ public class gestion {
             list_College.add(c);
         }
         else {
-            System.out.println("n'exist déja");
+            System.out.println("college exist déja");
         }
     }
 
@@ -380,7 +380,7 @@ public class gestion {
             list_Dep.add(d);
         }
         else {
-            System.out.println("n'exist déja");
+            System.out.println("Département exist déja");
         }
     }
 
@@ -400,18 +400,18 @@ public class gestion {
     
     // ====================== Classes_Enseignant ===========================
 
-    // Method 1 : Ajouter salle
+    // Method 1 : Ajouter Classes_Enseignant
     public void add_ClassEns(Class_ens ce)
     {
         if (!find_ce(ce.getId_class())) {
             list_ClassEns.add(ce);
         }
         else {
-            System.out.println("n'exist déja");
+            System.out.println("Classes_Enseignant exist déja");
         }
     }
 
-    // Method 2 : chercher une salle
+    // Method 2 : chercher Classes_Enseignant
     public boolean find_ce(int idNumber)
     {
         for (Class_ens c : list_ClassEns) {
@@ -429,8 +429,7 @@ public class gestion {
 
         // Method 1 : Ajouter note
         public void add_note(Note n)
-        {
-            // list_Note.add(n);   
+        {   
             list_Note.add(n);
         }
         // Method 2 : Afficher les notes
@@ -445,10 +444,9 @@ public class gestion {
         }
   // ================================== Matier ==============================
 
-        // Method 1 : Ajouter note
+        // Method 1 : Ajouter matier
         public void add_mat(Matiere m)
-        {
-            // list_Note.add(n);   
+        {   
             list_Matiere.add(m);
         }
     // ================================== Moyenne ==============================
